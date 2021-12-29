@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CustomWidget_doc"
+title:  "CustomWidget"
 date:   2021-12-29 15:25:00 +0100
 categories: jekyll update
 ---
