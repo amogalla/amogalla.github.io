@@ -1,28 +1,10 @@
-[![official project](https://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
-[![TeamCity (simple build status)](https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/Kotlin_KotlinPublic_Compiler.svg)](https://teamcity.jetbrains.com/buildConfiguration/Kotlin_KotlinPublic_Compiler?branch=%3Cdefault%3E&buildTypeTab=overview&mode=builds)
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin/kotlin-maven-plugin.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.jetbrains.kotlin%22)
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Revved up by Gradle Enterprise](https://img.shields.io/badge/Revved%20up%20by-Gradle%20Enterprise-06A0CE?logo=Gradle&labelColor=02303A)](https://ge.jetbrains.com/scans?search.rootProjectNames=Kotlin)
+# Custom Widget en PySide6
 
-# Kotlin Programming Language
-
-Welcome to [Kotlin](https://kotlinlang.org/)!   
-It is an open-source, statically typed programming language supported and developed by [JetBrains](https://www.jetbrains.com/) and open-source contributors.
+Esta es la documentación del [widget personalizado](https://github.com/amogalla/DI-Practica_4)
 
 Some handy links:
 
  * [Kotlin Site](https://kotlinlang.org/)
- * [Getting Started Guide](https://kotlinlang.org/docs/tutorials/getting-started.html)
- * [Try Kotlin](https://play.kotlinlang.org/)
- * [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
- * [Issue Tracker](https://youtrack.jetbrains.com/issues/KT)
- * [Kotlin YouTube Channel](https://www.youtube.com/channel/UCP7uiEZIqci43m22KDl0sNw)
- * [Forum](https://discuss.kotlinlang.org/)
- * [Kotlin Blog](https://blog.jetbrains.com/kotlin/)
- * [Subscribe to Kotlin YouTube channel](https://www.youtube.com/channel/UCP7uiEZIqci43m22KDl0sNw)
- * [Follow Kotlin on Twitter](https://twitter.com/kotlin)
- * [Public Slack channel](https://slack.kotlinlang.org/)
- * [TeamCity CI build](https://teamcity.jetbrains.com/project.html?tab=projectOverview&projectId=Kotlin)
 
 ## Kotlin Multiplatform capabilities
 
@@ -37,13 +19,9 @@ Support for multiplatform programming is one of Kotlin’s key benefits. It redu
 ## Editing Kotlin
 
  * [Kotlin IntelliJ IDEA Plugin](https://kotlinlang.org/docs/tutorials/getting-started.html) ([source code](https://github.com/JetBrains/intellij-community/tree/master/plugins/kotlin))
- * [Kotlin Eclipse Plugin](https://kotlinlang.org/docs/tutorials/getting-started-eclipse.html)
- * [Kotlin Sublime Text Package](https://github.com/vkostyukov/kotlin-sublime-package)
 
 ## Build environment requirements
-
-This repository is using [Gradle toolchains](https://docs.gradle.org/current/userguide/toolchains.html) feature
-to select and auto-provision required JDKs from [AdoptOpenJdk](https://adoptopenjdk.net) project. 
+This repository is using [Gradle toolchains](https://docs.gradle.org/current/userguide/toolchains.html) 
 
 Unfortunately [AdoptOpenJdk](https://adoptopenjdk.net) project does not provide required JDK 1.6 and 1.7 images,
 so you could either download them manually and provide path to installation via `JDK_16` and `JDK_17` environment variables or
@@ -98,10 +76,6 @@ command line parameters on the first run:
 
 - `clean` - clean build results
 - `dist` - assembles the compiler distribution into `dist/kotlinc/` folder
-- `install` - build and install all public artifacts into local maven repository
-- `coreLibsTest` - build and run stdlib, reflect and kotlin-test tests
-- `gradlePluginTest` - build and run gradle plugin tests
-- `compilerTest` - build and run all compiler tests
 
 To reproduce TeamCity build use `-Pteamcity=true` flag. Local builds don't run proguard and have jar compression disabled by default.
 
@@ -111,13 +85,6 @@ Refer to [libraries/ReadMe.md](libraries/ReadMe.md) for details.
 To build Kotlin/Native, see
 [kotlin-native/README.md](kotlin-native/README.md#building-from-source).
 
-### Building for different versions of IntelliJ IDEA and Android Studio
-
-Kotlin plugin is intended to work with several recent versions of IntelliJ IDEA and Android Studio. Each platform is allowed to have a different set of features and might provide a slightly different API. Instead of using several parallel Git branches, the project stores everything in a single branch, but files may have counterparts with version extensions (\*.as32, \*.172, \*.181). The primary file is expected to be replaced with its counterpart when targeting a non-default platform.
-
-A More detailed description of this scheme can be found at https://github.com/JetBrains/bunches/blob/master/ReadMe.md.
-
-Usually, there's no need to care about multiple platforms as all features are enabled everywhere by default. Additional counterparts should be created if there's an expected difference in behavior or an incompatible API usage is required **and** there's no reasonable workaround to save source compatibility. Kotlin plugin contains a pre-commit check that shows a warning if a file has been updated without its counterparts.
 
 Development for some particular platform is possible after 'switching' that can be done with the [Bunch Tool](https://github.com/JetBrains/bunches/releases) from the command line.
 
@@ -162,9 +129,6 @@ to perform such updates:
 
 - Consider removing old versions from the file if you are updating dependencies.
 - Leave meaningful `origin` attribute (instead of `Generated by Gradle`) if you did some manual verification of the artifact.
-- Always do manual verification if several hashes are needed and a new `also-trust` tag has to be added.
-- If you’re adding a dependency with OS mentioning in an artifact name (`darwin`, `mac`, `osx`, `linux`, `windows`), remember to add 
-  counterparts for other platforms.
 
 ## Using -dev and -SNAPSHOT versions
 
